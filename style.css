@@ -1,0 +1,537 @@
+/* Perusasetukset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  width: 100%;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #eaeaea;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+/* Sektiot */
+section {
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #3498db;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Sisältölohkot */
+.content-block {
+  margin-bottom: 50px;
+  padding: 35px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+}
+
+.content-block p {
+  margin-bottom: 25px;
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.15rem;
+}
+
+/* Image container - ILMAN REUNUKSIA */
+.image-container {
+  width: 100%;
+  height: 400px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.image-container p {
+  color: #7f8c8d;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Neliögrid - 6 RUUTUA (2x3) ILMAN REUNUKSIA */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.grid-item {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 1 / 1;
+}
+
+.grid-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+/* 16:9 Grid - LEVEÄMMÄT KUVAT (2x2) ILMAN REUNUKSIA */
+.image-grid-16-9 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.grid-item-16-9 {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16 / 9;
+}
+
+.grid-item-16-9:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item-16-9 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.grid-item-16-9:hover img {
+  transform: scale(1.05);
+}
+
+/* SUURI 16:9 GIF-ELEMENTTI ILMAN REUNUKSIA */
+.gif-container-16-9 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  aspect-ratio: 16 / 9;
+}
+
+.gif-element {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gif-element:hover {
+  transform: scale(1.02);
+}
+
+/* Some-markkinointi Grid - 2x2 ILMAN REUNUKSIA */
+.some-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 25px;
+  margin: 40px auto;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.some-grid-item {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 1 / 1;
+}
+
+.some-grid-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.some-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.some-grid-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 80px;
+  padding-top: 30px;
+  border-top: 2px solid #eee;
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+/* Galleria popup */
+.gallery-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.close-popup {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.15);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-popup:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg) scale(1.1);
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.15);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.15);
+}
+
+.prev-btn {
+  left: 40px;
+}
+
+.next-btn {
+  right: 40px;
+}
+
+.counter {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 22px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 30px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 1200px) {
+  body {
+    padding: 30px;
+  }
+
+  .container {
+    max-width: 1000px;
+    padding: 40px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  .image-container {
+    height: 350px;
+  }
+}
+/* Frontend-viimeistely Grid - 3x2 KUVAT JA TEKSTIT */
+.frontend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.frontend-item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.frontend-image-container {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16 / 9;
+}
+
+.frontend-image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.frontend-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.frontend-image-container:hover .frontend-img {
+  transform: scale(1.05);
+}
+
+.frontend-text-container {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.frontend-description {
+  color: #555;
+  line-height: 1.5;
+  font-size: 1rem;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .image-container {
+    height: 250px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 500px;
+  }
+
+  .grid-item {
+    aspect-ratio: 1 / 1;
+    max-height: 300px;
+  }
+
+  .image-grid-16-9 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 500px;
+  }
+
+  .grid-item-16-9 {
+    aspect-ratio: 16 / 9;
+    max-height: 250px;
+  }
+
+  .some-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 500px;
+  }
+
+  .some-grid-item {
+    aspect-ratio: 1 / 1;
+    max-height: 300px;
+  }
+
+  .gif-container-16-9 {
+    max-width: 100%;
+    margin: 30px auto;
+  }
+
+  .nav-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 35px;
+  }
+
+  .close-popup {
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+    top: 20px;
+    right: 25px;
+  }
+}
